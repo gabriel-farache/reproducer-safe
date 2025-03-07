@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/favicon.ico">
+    <meta charset="UTF-8">
+    <title>POC - SonataFlow GitHub OAuth App - Callback</title>
+        {#bundle /}
+    <!-- BUG:  https://github.com/quarkiverse/quarkus-web-bundler/issues/310 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="text-center">
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <img class="mb-4" src="/static/sonataflow-logo.png" alt="" width="100" height="">
+        <h1 class="text-body-emphasis">SonataFlow and GitHub OAuth App</h1>
+
+        <p class="col-lg-8 mx-auto fs-5 text-muted">
+            Here's the response from the workflow call.
+        </p>
+        <div class="d-inline-flex gap-2 mb-5">
+            <code>{workflow_response}</code>
+        </div>
+    </div>
+</div>
+</body>
+</html>

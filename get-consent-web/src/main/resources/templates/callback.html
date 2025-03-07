@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/static/favicon.ico">
+    <meta charset="UTF-8">
+    <title>POC - SonataFlow GitHub OAuth App - Callback</title>
+        {#bundle /}
+    <!-- BUG:  https://github.com/quarkiverse/quarkus-web-bundler/issues/310 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body class="text-center">
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <img class="mb-4" src="/static/sonataflow-logo.png" alt="" width="100" height="">
+        <h1 class="text-body-emphasis">SonataFlow and GitHub OAuth App</h1>
+
+        {#if access_token != ''}
+            <p class="col-lg-8 mx-auto fs-5 text-muted">
+                Congrats! Here is your <code>access_token</code> use it wisely!
+            </p>
+            <div class="d-inline-flex gap-2 mb-5">
+                <code>{access_token}</code>
+            </div>
+
+        {#else}
+            {#if error != ''}
+                <p class="col-lg-8 mx-auto fs-5 text-muted">
+                    Error while trying to get the <code>access_token</code>.
+                </p>
+                <div class="alert alert-danger d-flex align-items-center" role="alert">
+                    <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+                    <div>
+                        <code>{error}</code>: {error_description}
+                    </div>
+                </div>
+            {#else}
+                <p class="col-lg-8 mx-auto fs-5 text-muted">
+                    This is a callback page for GitHub OAuth2 Flow. <a href="/">Click here</a> to login with your account and grant consent to the application.
+                </p>
+            {/if}
+        {/if}
+    </div>
+</div>
+</body>
